@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from typing import List, Dict
 from models import Board, PlacementException, GenerationException, InvalidShotException
-from player import Player, AiPlayer
+from player import Player, AiPlayer, HumanPlayer
 from rendering import Renderer
 from utils import Vec2
 
@@ -75,10 +75,13 @@ class Game:
 
 
 def main():
+    global game
     board_size = Vec2(6, 6)
     fleet = {
         3: 1,
-        2: 2
+        2: 2,
+        1: 3
+
     }
     game = Game(
         board_size,
